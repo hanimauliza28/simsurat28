@@ -1,0 +1,4 @@
+SELECT a.*,
+	(select b.tgl_surat from tb_suratmasuk b WHERE b.id_surat=a.id_surat_id) as 'tgl_surat_sm',
+	(select b.perihal from tb_suratmasuk b WHERE b.id_surat=a.id_surat_id) as 'perihal_sm'
+FROM tb_suratkeluar a
